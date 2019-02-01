@@ -1,0 +1,145 @@
+@mixin base-size($name, $baseSize) {
+
+  .p5ct.base-size-#{$name} {
+
+    $intSize : $baseSize - 10;
+
+    width: $baseSize;
+    &.dir-h, &.dir-horizontal {
+      width: auto;
+      height: $baseSize + 50;
+    }
+
+    .p5ct-xypad {
+      width: $intSize;
+      height: $intSize;
+    }
+    .p5ct-xpad {
+      width: $intSize;
+    }
+    .p5ct-xpad span {
+      left: $intSize;
+    }
+    .p5ct-xpad em {
+      width: $intSize;
+      margin-left: -$intSize - (ctrlSize/2);
+      margin-left: -$intSize;
+    }
+    .p5ct-ypad {
+      height: $intSize;
+    }
+    .p5ct-ypad em {
+      height: $intSize;
+      margin-bottom: -$intSize;
+    }
+    .p5ct-input {
+      width: $intSize;
+    }
+  }
+}
+
+@mixin ctrl-size($name, $ctrlSize, $margin) {
+
+  .p5ct.ctrl-size-#{$name} {
+
+    .p5ct-ctrl {
+      margin: 0 $margin $margin 0;
+    }
+    .p5ct-xypad span {
+      width: $ctrlSize;
+      height: $ctrlSize;
+      margin-top: -($ctrlSize / 2);
+      margin-left: -($ctrlSize / 2);
+    }
+    .p5ct-xpad {
+      height: $ctrlSize;
+      span, em {
+        height: $ctrlSize;
+      }
+    }
+    .p5ct-ypad {
+      width: $ctrlSize;
+      span, em {
+        width: $ctrlSize;
+      }
+    }
+    .p5ct-input {
+      height: $ctrlSize * 1.2;
+    }
+  }
+}
+
+/**
+ *
+ * SIZE NORMAL
+ *
+ */
+$name: 'normal';
+$baseSize: 160px;
+$ctrlSize: 25px;
+$margin: 5px;
+@include base-size($name, $baseSize);
+@include ctrl-size($name, $ctrlSize, $margin);
+
+/**
+ *
+ * SIZE SMALL
+ *
+ */
+$name: 'small';
+$baseSize: 110px;
+$ctrlSize: 15px;
+$margin: 5px;
+@include base-size($name, $baseSize);
+@include ctrl-size($name, $ctrlSize, $margin);
+
+/**
+ *
+ * SIZE X-SMALL
+ *
+ */
+$name: 'x-small';
+$baseSize: 60px;
+$ctrlSize: 7px;
+$margin: 3px;
+@include base-size($name, $baseSize);
+@include ctrl-size($name, $ctrlSize, $margin);
+
+/**
+ *
+ * SIZE LARGE
+ *
+ */
+$name: 'large';
+$baseSize: 210px;
+$ctrlSize: 30px;
+$margin: 10px;
+@include base-size($name, $baseSize);
+@include ctrl-size($name, $ctrlSize, $margin);
+
+/**
+ *
+ * SIZE X-LARGE
+ *
+ */
+$name: 'x-large';
+$baseSize: 260px;
+$ctrlSize: 40px;
+$margin: 10px;
+@include base-size($name, $baseSize);
+@include ctrl-size($name, $ctrlSize, $margin);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+.p5ct {
+  position: fixed;
+  overflow: hidden;
+  transition: width 0.2s, height 0.2s;
+  height: auto;
+  font-family: tahoma, verdana, arial;
+  &.minimized-true {
+      height: 20px !important;
+      width: 20px !important;
+      .p5ct-content, .p5ct-label  {
+        display: none;
+      }
+  }
+}
+.p5ct.dir-h, .p5ct.dir-horizontal {
+  width: auto;
+}
+.p5ct-tl {
+    top: $pos;
+    left: $pos;
+}
+.p5ct-tr {
+    top: $pos;
+    right: $pos;
+}
+.p5ct-br {
+    bottom: $pos;
+    right: $pos;
+}
+.p5ct-bl {
+    bottom: $pos;
+    left: $pos;
+}
+
+.p5ct-header {
+    height: 20px;
+}
+
+.p5ct-header-button {
+    border: none;
+    height: 100%;
+    width: 20px;
+    background: transparent;
+    position: relative;
+    font-size: 17px;
+    outline: none;
+    color: inherit;
+    &:hover {
+        background: rgba(0,0,0,0.1);
+    }
+    &:after {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: -2px;
+        font-size: 17px;
+    }
+}
+
+.p5ct-minimize {
+    @extend .p5ct-header-button;
+    &:after {
+        // content: "□";
+        content: "\25F0";
+    }
+    .minimized-true & {
+        &:after {
+            content: "\25EB";
+        }
+    }
+}
+.p5ct-toggle-dir {
+    @extend .p5ct-header-button;
+    font-size: 13px;
+    font-family: tahoma;
+    line-height: 19px;
+    &:after {
+        content: "\21D5";
+    }
+    .dir-horizontal &, .dir-h {
+        &:after {
+          content: "\21D4";
+        }
+    }
+}
+
+.p5ct-content {
+    padding: 5px;
+    float: left;
+    width: 100%;
+    // .minimized & {
+    //     display: none;
+    // }
+    > div {
+      float: left;
+    }
+}
+
+.p5ct-label {
+  float: left;
+  width: 100%;
+  clear: both;
+  font-size: 12px;
+  > p {
+    // width: 50%;
+    float: left;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0;
+    .p5ct.dir-h &, .p5ct.dir-horizontal & {
+      // width: 50%;
+    }
+  }
+  em {
+    font-style: normal;
+    opacity: .7;
+  }
+  .p5ct-value-label {
+    float: right;
+  }
+}

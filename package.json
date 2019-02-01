@@ -1,0 +1,41 @@
+{
+  "name": "p5-controller",
+  "version": "1.0.3",
+  "description": "> Quick create controllers for p5.js",
+  "main": "dist/p5.controller.min.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "add-build": "git add dist/p5.controller.min.js",
+    "build": "webpack --config webpack.build.config.js",
+    "js": "webpack --watch",
+    "pre-commit": "npm-run-all build add-build",
+    "start": "npm-run-all --parallel js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniloprates/p5-controller.git"
+  },
+  "keywords": [],
+  "author": "Danilo Prates <daniloprates@gmail.com> (https://github.com/daniloprates)",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "0.25.0",
+    "drag-drop-dom": "^1.0.2",
+    "draggable": "git+https://github.com/daniloprates/draggable.git#handle-element",
+    "gator": "^1.2.4",
+    "ghooks": "^1.3.2",
+    "json-loader": "^0.5.4",
+    "micro-events": "^1.0.0",
+    "node-sass": "^3.10.0",
+    "npm-run-all": "^3.1.0",
+    "sass-loader": "4.0.2",
+    "webpack": "^1.13.2"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/daniloprates/p5-controller#readme"
+}

@@ -1,0 +1,103 @@
+$bgCtrlDefault: rgba(255, 255, 255, 0.5);
+
+@mixin theme ($name, $fgColor, $bgBase, $color: black, $bgCtrl: $bgCtrlDefault, $secColor: $fgColor) {
+  .p5ct.theme-#{$name} {
+
+    background: $bgBase;
+    color: $color;
+    .p5ct-header {
+      background: $fgColor;
+    }
+    .p5ct-label {
+      background: $bgCtrl;
+      color: $secColor;
+    }
+    .p5ct-xypad, .p5ct-xpad, .p5ct-ypad {
+      background: $bgCtrl;
+
+      span, em {
+        background: $fgColor;
+      },
+      em {
+        // background: $fgColor2;
+      }
+    }
+    .p5ct-checkbox {
+      span {
+        background: $bgBase;
+      }
+      input[type="checkbox"]:checked + label span {
+        background: $fgColor;
+        box-shadow: 0 0 3px $fgColor;
+      }
+    }
+  }
+}
+
+/**
+ *
+ * p5 THEME
+ *
+ */
+$name: 'p5';
+$fgColor: #ED225D;
+$fgColor2: #ED225D;
+$secColor: #2D7BB6;
+$bgBase: #908f7f;
+$color: #fff;
+$bgCtrl: #c8c7bf;
+$secCoor: #2D7BB6;
+@include theme($name, $fgColor, $bgBase, $color, $bgCtrl, $secColor);
+
+/**
+ *
+ * BLACK FIRE THEME
+ *
+ */
+$name: 'black-fire';
+$fgColor: orange;
+$bgBase: black;
+$color: 'pink';
+@include theme($name, $fgColor, $bgBase);
+
+/**
+ *
+ * BLACK MONO THEME
+ *
+ */
+$name: 'black-mono';
+$fgColor: #999;
+$bgBase: black;
+$color: #ccc;
+$bgCtrl: #333;
+@include theme($name, $fgColor, $bgBase, $color, $bgCtrl);
+
+
+/**
+ *
+ * COZY THEME
+ *
+ */
+$name: 'cozy';
+$fgColor: #d35400;
+$bgBase: #2c3e50;
+$color: #ccc;
+$bgCtrl: #3c546b;
+@include theme($name, $fgColor, $bgBase, $color, $bgCtrl);
+
+
+/**
+ *
+ * COZY THEME
+ *
+ */
+$name: 'hip';
+$fgColor: #EB6B56;
+$bgBase: #462446;
+$color: #FFC153;
+$bgCtrl: #FFC153;
+$secColor: #47B39D;
+@include theme($name, $fgColor, $bgBase, $color, $bgCtrl, $secColor);
+
+
+
